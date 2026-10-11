@@ -1,0 +1,1868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bouquet Collection | Rosa Fiora Miami</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Italiana&family=Quantico:wght@400;700&family=Manrope:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+        
+
+<style>
+/* Force consistent card sizing */
+ @import url("https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Italiana&family=Quantico:wght@400;700&family=Manrope:wght@400;500;600;700&display=swap");
+
+/* LOCAL FONT */
+@font-face {
+  font-family: "Mirella";
+  src: url("Mirella Script Limited Free Version.ttf") format("truetype")
+}
+
+/* GOOGLE FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Italiana&family=Quantico:wght@400;700&family=Manrope:wght@400;500;600;700&display=swap");
+
+/* LOCAL FONT */
+@font-face {
+  font-family: "Mirella";
+  src: url("Mirella Script Limited Free Version.ttf") format("truetype");
+}
+
+/* ROOT COLORS */
+:root {
+  --burgundy: #3A071F;
+  --pink: #B65A7C;
+  --pale-pink: #e6bbc9;
+  --cream: #fff6ea;
+  --white: #ffffff;
+}
+
+body {
+  margin: 0;
+  background: var(--burgundy);
+  color: var(--cream);
+  font-family: "Manrope", sans-serif;
+}
+
+/* BOUQUET GRID FIX */
+/* Ensure the grid container spans full width */
+.bouquet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px 20px;
+  width: 100%;
+  max-width: 1280px; /* gives room for all columns */
+  margin: 0 auto;    /* centers the grid */
+  padding: 40px 6%;
+  box-sizing: border-box;
+}
+
+
+.bouquet-card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(230, 187, 201, 0.08);
+  border-radius: 9px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 300px;
+  animation: appear 0.45s ease both;
+}
+
+/* IMAGE BOX */
+.bouquet-image {
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 9px 9px 0 0;
+  background: rgba(230, 187, 201, 0.16);
+}
+
+.bouquet-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.55s ease;
+}
+
+.bouquet-card:hover .bouquet-image img {
+  transform: scale(1.045);
+}
+
+/* DETAILS */
+.bouquet-details {
+  padding: 14px;
+  text-align: center;
+}
+
+.bouquet-details h3 {
+  margin: 0 0 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  color: var(--cream);
+  letter-spacing: -1px;
+  font-weight: 400;
+}
+
+.bouquet-description {
+  font-size: 13px;
+  color: rgba(255, 246, 234, 0.76);
+  margin: 0 0 6px;
+  font-family: "Manrope", sans-serif;
+}
+
+.bouquet-price {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cream);
+  margin: 0 0 10px;
+  font-family: "Manrope", sans-serif;
+}
+
+.view-bouquet {
+  display: inline-block;
+  padding: 8px 12px;
+  border: 1px solid var(--pale-pink);
+  color: var(--cream);
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: "Manrope", sans-serif;
+  transition: 0.25s ease;
+}
+
+.view-bouquet:hover {
+  color: var(--burgundy);
+  background: var(--pale-pink);
+}
+/* LUXURY BOUQUET FILTERS */
+
+.bouquet-filters {
+    position: relative;
+    width: min(100% - 60px, 1120px);
+    margin: 80px auto;
+    padding: 55px 65px 25px;
+
+    background: #fff6ea;
+    color: #3A071F;
+
+    border: 1px solid rgba(58, 7, 31, 0.13);
+    overflow: hidden;
+}
+
+/* Soft decorative background detail */
+
+.bouquet-filters::before {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    top: -160px;
+    right: -100px;
+
+    border: 1px solid rgba(182, 90, 124, 0.22);
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.filter-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.filter-eyebrow {
+    display: inline-block;
+    font-family: "Manrope", sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #B65A7C;
+    margin-bottom: 15px;
+}
+
+.filter-heading h2 {
+    font-family: "Bodoni Moda", serif;
+    font-weight: 400;
+    font-size: clamp(36px, 4vw, 55px);
+    line-height: 1.1;
+    margin: 0;
+    letter-spacing: -1.5px;
+}
+
+.filter-heading h2 span {
+    font-family: "Ballet", cursive;
+    color: #B65A7C;
+    font-size: 1.15em;
+}
+
+.filter-heading p {
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    color: #795866;
+    letter-spacing: 0.3px;
+    margin-top: 16px;
+}
+
+/* Filter layout */
+
+.filter-controls {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    align-items: center;
+    gap: 35px;
+}
+
+.filter-group {
+    min-width: 0;
+}
+
+.filter-group label {
+    display: block;
+    font-family: "Manrope", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    margin-bottom: 15px;
+    color: #795866;
+}
+
+.filter-select-wrap {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    border-bottom: 1px solid #d9b5c1;
+    padding: 0 0 15px;
+
+    transition: border-color 0.3s ease;
+}
+
+.filter-select-wrap:focus-within {
+    border-color: #3A071F;
+}
+
+.filter-number {
+    font-family: "Bodoni Moda", serif;
+    font-size: 13px;
+    color: #B65A7C;
+}
+
+.filter-select-wrap select {
+    flex: 1;
+    min-width: 0;
+    appearance: none;
+    -webkit-appearance: none;
+
+    border: none;
+    outline: none;
+    background: transparent;
+
+    font-family: "Bodoni Moda", serif;
+    font-size: 20px;
+    color: #3A071F;
+
+    cursor: pointer;
+}
+
+.filter-select-wrap select option {
+    background: #fff6ea;
+    color: #3A071F;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.filter-divider {
+    height: 70px;
+    background: rgba(58, 7, 31, 0.15);
+}
+
+/* Bottom signature */
+
+.filter-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 42px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(58, 7, 31, 0.12);
+}
+
+.filter-bottom > span:first-child {
+    font-family: "Manrope", sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #9b7887;
+}
+
+.filter-flower {
+    color: #B65A7C;
+    font-size: 19px;
+    display: inline-block;
+}
+
+/* Responsive */
+
+@media (max-width: 650px) {
+    .bouquet-filters {
+        width: calc(100% - 30px);
+        margin: 45px auto;
+        padding: 40px 25px 20px;
+    }
+
+    .filter-heading {
+        margin-bottom: 35px;
+    }
+
+    .filter-controls {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .filter-divider {
+        height: 1px;
+        width: 100%;
+    }
+
+    .filter-select-wrap select {
+        font-size: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .filter-arrow,
+    .filter-select-wrap {
+        transition: none;
+    }
+  }
+
+/* ANIMATION */
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 1050px) {
+  .bouquet-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .bouquet-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 26px 13px;
+  }
+
+  .bouquet-details h3 {
+    font-size: 20px;
+  }
+
+  .bouquet-description {
+    font-size: 13px;
+  }
+}
+    
+/* COMPACT, MINIMAL CATEGORY FILTERS */
+.bouquet-filters {
+    width: min(100% - 40px, 900px);
+    margin: 38px auto 28px;
+    padding: 26px 32px 18px;
+    box-sizing: border-box;
+}
+.filter-heading {
+    margin-bottom: 24px;
+}
+.filter-eyebrow {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    margin-bottom: 8px;
+}
+.filter-heading h2 {
+    font-size: clamp(29px, 3vw, 40px);
+    letter-spacing: -0.7px;
+}
+.filter-heading p {
+    margin-top: 8px;
+    margin-bottom: 0;
+    font-size: 11px;
+}
+.filter-controls {
+    gap: 22px;
+}
+.filter-group label {
+    font-size: 9px;
+    letter-spacing: 1.7px;
+    margin-bottom: 9px;
+}
+.filter-select-wrap {
+    gap: 10px;
+    padding-bottom: 9px;
+}
+.filter-select-wrap select {
+    font-size: 17px;
+}
+.filter-arrow {
+    font-size: 16px;
+}
+.filter-divider {
+    height: 48px;
+}
+.filter-bottom {
+    margin-top: 20px;
+    padding-top: 10px;
+}
+.filter-bottom > span:first-child {
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+.filter-flower {
+    font-size: 15px;
+}
+.no-results {
+    max-width: 800px;
+    margin: 12px auto 50px;
+    padding: 0 20px;
+    text-align: center;
+    color: var(--cream);
+    font-size: 14px;
+}
+.bouquet-card[hidden] {
+    display: none !important;
+}
+
+/* FOOTER */
+.site-footer {
+    margin-top: 55px;
+    padding: 48px 6% 0;
+    background: #260416;
+    color: var(--cream);
+    border-top: 1px solid rgba(230, 187, 201, 0.22);
+    box-sizing: border-box;
+}
+.footer-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1.2fr 0.8fr;
+    gap: 36px;
+}
+.site-footer h4 {
+    margin: 0 0 16px;
+    color: var(--pale-pink);
+    font-family: "Italiana", serif;
+    font-size: 19px;
+    font-weight: 400;
+}
+.site-footer p,
+.site-footer li,
+.site-footer a {
+    color: rgba(255, 246, 234, 0.76);
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    line-height: 1.9;
+    overflow-wrap: anywhere;
+}
+.site-footer p {
+    margin: 0 0 8px;
+}
+.site-footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.site-footer a {
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.site-footer a:hover {
+    color: var(--pale-pink);
+}
+.footer-bottom {
+    max-width: 1280px;
+    margin: 32px auto 0;
+    padding: 16px 0 20px;
+    border-top: 1px solid rgba(230, 187, 201, 0.16);
+    text-align: center;
+}
+.footer-bottom p {
+    margin: 0;
+    font-size: 10px;
+    letter-spacing: 0.4px;
+}
+
+
+/* =========================
+   MOBILE VIEW ONLY
+   ========================= */
+
+@media (max-width: 600px) {
+
+    /* General layout */
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Bouquet filters */
+    .bouquet-filters {
+        width: calc(100% - 28px);
+        margin: 24px auto;
+        padding: 24px 18px 16px;
+        box-sizing: border-box;
+    }
+
+    .filter-heading {
+        margin-bottom: 24px;
+    }
+
+    .filter-eyebrow {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .filter-heading h2 {
+        font-size: clamp(27px, 7vw, 34px);
+        line-height: 1.2;
+        letter-spacing: -0.5px;
+    }
+
+    .filter-heading h2 span {
+        font-size: 1.1em;
+    }
+
+    .filter-heading p {
+        font-size: 12px;
+        line-height: 1.6;
+        max-width: 260px;
+        margin: 10px auto 0;
+    }
+
+    /* Stack filters vertically */
+    .filter-controls {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .filter-group label {
+        font-size: 9px;
+        letter-spacing: 1.5px;
+        margin-bottom: 10px;
+    }
+
+    .filter-select-wrap {
+        gap: 10px;
+        padding-bottom: 10px;
+    }
+
+    .filter-select-wrap select {
+        font-size: 16px;
+        padding: 4px 0;
+    }
+
+    .filter-divider {
+        width: 100%;
+        height: 1px;
+    }
+
+    .filter-number {
+        font-size: 12px;
+    }
+
+    .filter-bottom {
+        margin-top: 22px;
+        padding-top: 12px;
+    }
+
+    .filter-bottom > span:first-child {
+        font-size: 8px;
+        letter-spacing: 1.5px;
+    }
+
+    .filter-flower {
+        font-size: 14px;
+    }
+
+    /* Two-column bouquet collection */
+    .bouquet-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px 12px;
+        width: 100%;
+        padding: 20px 12px;
+        box-sizing: border-box;
+    }
+
+    .bouquet-card {
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+        border-radius: 6px;
+    }
+
+    /* Bouquet images */
+    .bouquet-image {
+        height: auto;
+        aspect-ratio: 3 / 4;
+        border-radius: 6px 6px 0 0;
+    }
+
+    .bouquet-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Bouquet information */
+    .bouquet-details {
+        padding: 11px 8px 13px;
+        text-align: left;
+    }
+
+    .bouquet-details h3 {
+        font-size: 15px;
+        line-height: 1.35;
+        letter-spacing: -0.3px;
+        margin-bottom: 6px;
+        overflow-wrap: anywhere;
+    }
+
+    .bouquet-description {
+        font-size: 11px;
+        line-height: 1.6;
+        margin-bottom: 7px;
+    }
+
+    .bouquet-price {
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+
+    /* Simple, readable buttons */
+    .view-bouquet {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px 5px;
+        text-align: center;
+        font-size: 9px;
+        letter-spacing: 0.4px;
+        line-height: 1.4;
+    }
+
+    /* No-results message */
+    .no-results {
+        padding: 0 20px;
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    /* Footer */
+    .site-footer {
+        margin-top: 30px;
+        padding: 30px 22px 0;
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px 18px;
+    }
+
+    .site-footer h4 {
+        font-size: 17px;
+        margin-bottom: 10px;
+    }
+
+    .site-footer p,
+    .site-footer li,
+    .site-footer a {
+        font-size: 11px;
+        line-height: 1.8;
+    }
+
+    .footer-bottom {
+        margin-top: 25px;
+        padding: 15px 0 18px;
+    }
+
+    .footer-bottom p {
+        font-size: 9px;
+        line-height: 1.6;
+    }
+}
+
+/* Extra-small phones */
+@media (max-width: 360px) {
+
+    .bouquet-grid {
+        grid-template-columns: 1fr;
+        padding: 16px 22px;
+        gap: 24px;
+    }
+
+    .bouquet-image {
+        aspect-ratio: 4 / 3;
+    }
+
+    .bouquet-details {
+        padding: 13px;
+    }
+
+    .bouquet-details h3 {
+        font-size: 18px;
+    }
+
+    .bouquet-description {
+        font-size: 12px;
+    }
+
+    .bouquet-price {
+        font-size: 13px;
+    }
+
+    .view-bouquet {
+        font-size: 10px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (max-width: 600px) and (prefers-reduced-motion: reduce) {
+    .bouquet-card,
+    .bouquet-image img,
+    .view-bouquet {
+        animation: none;
+        transition: none;
+    }
+
+    .bouquet-card:hover .bouquet-image img {
+        transform: none;
+    }
+}
+
+</style>
+</head>
+<body>
+<!-- FILTER SECTION -->
+
+<section class="bouquet-filters">
+
+    <div class="filter-heading">
+        <span class="filter-eyebrow">FIND YOUR FLOWERS</span>
+        <h2>Something <span>Beautiful</span></h2>
+        <p>Discover the perfect bouquet for every moment.</p>
+    </div>
+
+    <div class="filter-controls">
+
+        <div class="filter-group">
+            <label for="occasion-filter">THE OCCASION</label>
+
+            <div class="filter-select-wrap">
+                <span class="filter-number">01</span>
+                <select id="occasion-filter">
+                    <option value="all">All Occasions</option>
+                    <option value="wedding">Wedding</option>
+                    <option value="birthday">Birthday</option>
+                    <option value="love">Love</option>
+                    <option value="sympathy">Sympathy</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="filter-divider"></div>
+
+        <div class="filter-group">
+            <label for="flower-filter">THE FLOWERS</label>
+
+            <div class="filter-select-wrap">
+                <span class="filter-number">02</span>
+                <select id="flower-filter">
+                    <option value="all">All Flowers</option>
+                    <option value="roses">Roses</option>
+                    <option value="tulips">Tulips</option>
+                    <option value="orchids">Orchids</option>
+                </select>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="filter-bottom">
+        <span>CURATED WITH LOVE</span>
+        <span class="filter-flower">✳</span>
+    </div>
+
+</section>
+
+<section class="bouquet-grid" id="bouquetGrid">
+
+  <!-- Ivory Glow Rhapsody -->
+  <article class="bouquet-card" data-price="125" data-flower="rose" data-occasion="wedding anniversary sympathy">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/ivory-glow-rhapsody-1788969659-1a92a4-edited/card-320.webp?v=20260828-1" alt="Ivory Glow Rhapsody bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Ivory Glow Rhapsody</h3>
+      <p class="bouquet-description">Elegant ivory roses in a timeless arrangement.</p>
+      <p class="bouquet-price">From $125</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-ivory-white-roses?size=petite">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Crimson Gala -->
+  <article class="bouquet-card" data-price="125" data-flower="rose" data-occasion="love anniversary birthday">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/crimson-gala-1788969242-a468c8-edited/card-320.webp?v=20260828-1" alt="Crimson Gala bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Crimson Gala</h3>
+      <p class="bouquet-description">Classic crimson roses for unforgettable moments.</p>
+      <p class="bouquet-price">From $125</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-crimson-gala?size=petite">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Allure Aura -->
+  <article class="bouquet-card" data-price="125" data-flower="rose garden-rose" data-occasion="birthday love anniversary">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/allure-aura-1788970176-a3d9c0-edited/card-320.webp?v=20260828-1" alt="Allure Aura bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Allure Aura</h3>
+      <p class="bouquet-description">Cream, champagne, and dusty-pink roses in a graceful rounded arrangement.</p>
+      <p class="bouquet-price">From $125</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-rose-allure-roses?size=petite">View Bouquet</a>
+    </div>
+  </article>
+
+
+  <!-- Pink Cadence -->
+  <article class="bouquet-card" data-price="130" data-flower="rose" data-occasion="birthday love">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/pink-cadence-1787894331-5efd6e/card-320.webp?v=20260828-1" alt="Pink Cadence bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Pink Cadence</h3>
+      <p class="bouquet-description">A soft pink arrangement for a thoughtful gift.</p>
+      <p class="bouquet-price">$130</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-pink-cadence?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Apricot Vellum -->
+  <article class="bouquet-card" data-price="125" data-flower="rose" data-occasion="birthday wedding">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/apricot-vellum-1788969482-f3db81-edited/card-320.webp?v=20260828-1" alt="Apricot Vellum bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Apricot Vellum</h3>
+      <p class="bouquet-description">A warm, elegant palette for special occasions.</p>
+      <p class="bouquet-price">From $125</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-azure-romance?size=petite">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Candy Rhapsody -->
+  <article class="bouquet-card" data-price="255" data-flower="rose" data-occasion="birthday love">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/candy-rhapsody-1787892828-a33318/card-320.webp?v=20260828-1" alt="Candy Rhapsody bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Candy Rhapsody</h3>
+      <p class="bouquet-description">A generous bouquet with a romantic feel.</p>
+      <p class="bouquet-price">$255</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-candy-rhapsody?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Champagne Affair -->
+  <article class="bouquet-card" data-price="235" data-flower="rose" data-occasion="anniversary wedding">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/champagne-affair-1787893546-ba2907/card-320.webp?v=20260828-1" alt="Champagne Affair bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Champagne Affair</h3>
+      <p class="bouquet-description">Understated elegance in soft, timeless tones.</p>
+      <p class="bouquet-price">$235</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-champagne-affair?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Noir Passion -->
+  <article class="bouquet-card" data-price="280" data-flower="rose" data-occasion="love anniversary">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/noir-passion-1787893297-74ae32/card-320.webp?v=20260828-1" alt="Noir Passion bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Noir Passion</h3>
+      <p class="bouquet-description">A dramatic statement for a meaningful gesture.</p>
+      <p class="bouquet-price">$280</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-noir-passion?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Petal Symphony -->
+  <article class="bouquet-card" data-price="280" data-flower="rose hydrangea" data-occasion="birthday wedding">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/petal-symphony-1787892912-522d4f/card-320.webp?v=20260828-1" alt="Petal Symphony bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Petal Symphony</h3>
+      <p class="bouquet-description">Pink roses and hydrangeas with cool blue accents.</p>
+      <p class="bouquet-price">$280</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-petal-symphony?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Aquarelle Constellation -->
+  <article class="bouquet-card" data-price="290" data-flower="rose" data-occasion="birthday anniversary">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/scarlet-prelude-1787891076-356d57/card-320.webp?v=20260828-1" alt="Aquarelle Constellation bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Aquarelle Constellation</h3>
+      <p class="bouquet-description">An artful arrangement for a remarkable occasion.</p>
+      <p class="bouquet-price">$290</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-scarlet-prelude?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Pink Élan -->
+  <article class="bouquet-card" data-price="135" data-flower="rose" data-occasion="birthday love">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/pink-lan-1787893678-f16210/card-320.webp?v=20260828-1" alt="Pink Élan bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Pink Élan</h3>
+      <p class="bouquet-description">Fresh pink tones with an effortlessly elegant finish.</p>
+      <p class="bouquet-price">$135</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-pink-lan?size=couture">View Bouquet</a>
+    </div>
+  </article>
+  <!-- Apricot Rhapsody -->
+  <article class="bouquet-card" data-price="245" data-flower="rose" data-occasion="birthday wedding">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/apricot-rhapsody-1787894019-c024a8/card-320.webp?v=20260828-1" alt="Apricot Rhapsody bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Apricot Rhapsody</h3>
+      <p class="bouquet-description">Warm, soft colors arranged for a graceful gift.</p>
+      <p class="bouquet-price">$245</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-apricot-rhapsody?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Blush Amour Prelude -->
+  <article class="bouquet-card" data-price="250" data-flower="rose" data-occasion="love anniversary">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/blush-amour-prelude-1788052890-732585-edited/card-320.webp?v=20260828-1" alt="Blush Amour Prelude bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Blush Amour Prelude</h3>
+      <p class="bouquet-description">A romantic blend of delicate blush shades.</p>
+      <p class="bouquet-price">$250</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-pink-amour-hydrangeas-peonies?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Blush Confetti -->
+  <article class="bouquet-card" data-price="210" data-flower="rose" data-occasion="birthday love">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/blush-confetti-1787894628-d1fdca/card-320.webp?v=20260828-1" alt="Blush Confetti bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Blush Confetti</h3>
+      <p class="bouquet-description">A joyful arrangement in a soft pink palette.</p>
+      <p class="bouquet-price">$210</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-blush-confetti?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Petal Gala -->
+  <article class="bouquet-card" data-price="125" data-flower="rose" data-occasion="birthday anniversary">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/petal-gala-1788970635-7c1d6a-edited/card-320.webp?v=20260828-1" alt="Petal Gala bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Petal Gala</h3>
+      <p class="bouquet-description">A classic floral gift for life's celebrations.</p>
+      <p class="bouquet-price">From $125</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-petal-roses?size=petite">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Ivory Grande Dawn -->
+  <article class="bouquet-card" data-price="125" data-flower="rose" data-occasion="wedding sympathy">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/ivory-grande-dawn-1788970612-1ee051-edited/card-320.webp?v=20260828-1" alt="Ivory Grande Dawn bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Ivory Grande Dawn</h3>
+      <p class="bouquet-description">An elegant ivory arrangement with a timeless silhouette.</p>
+      <p class="bouquet-price">From $125</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-blanc-grande-spray-roses?size=petite">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Pearl Orchid -->
+  <article class="bouquet-card" data-price="295" data-flower="orchid" data-occasion="birthday wedding">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/pearl-orchid-1787890280-5bacc8/card-320.webp?v=20260828-1" alt="Pearl Orchid bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Pearl Orchid</h3>
+      <p class="bouquet-description">A refined floral gift with an elegant name and feel.</p>
+      <p class="bouquet-price">$295</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-pearl-orchid?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Ballet Bloom -->
+  <article class="bouquet-card" data-price="255" data-flower="rose" data-occasion="birthday love">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/ballet-bloom-1787892689-8da706/card-320.webp?v=20260828-1" alt="Ballet Bloom bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Ballet Bloom</h3>
+      <p class="bouquet-description">A soft, romantic arrangement with graceful color.</p>
+      <p class="bouquet-price">$255</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-ballet-bloom?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Ivory Champagne Ballet -->
+  <article class="bouquet-card" data-price="135" data-flower="rose" data-occasion="wedding anniversary">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/ivory-champagne-ballet-1788970115-70fe7d-edited/card-320.webp?v=20260828-1" alt="Ivory Champagne Ballet bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Ivory Champagne Ballet</h3>
+      <p class="bouquet-description">Creamy ivory tones for an elegant, thoughtful gift.</p>
+      <p class="bouquet-price">From $135</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-white-tulips?size=petite">View Bouquet</a>
+    </div>
+  </article>
+  <!-- Rosaline Meadow -->
+  <article class="bouquet-card" data-price="390" data-flower="rose hydrangea orchid" data-occasion="love anniversary">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/silk-charm-1788108342-8c54fd-edited/card-320.webp?v=20260828-1" alt="Rosaline Meadow bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Rosaline Meadow</h3>
+      <p class="bouquet-description">A luxurious arrangement for an unforgettable moment.</p>
+      <p class="bouquet-price">$390</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-orchid-silk-hydrangeas-garden-roses-ranunculus-orchids?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Rosé Rhapsody -->
+  <article class="bouquet-card" data-price="125" data-flower="rose" data-occasion="birthday love">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/ros-rhapsody-1788969211-798132-edited/card-320.webp?v=20260828-1" alt="Rosé Rhapsody bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Rosé Rhapsody</h3>
+      <p class="bouquet-description">Romantic pink tones with a delicate, modern feel.</p>
+      <p class="bouquet-price">From $125</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-ros-rhapsody?size=petite">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Candy Prelude -->
+  <article class="bouquet-card" data-price="190" data-flower="rose" data-occasion="birthday love">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/candy-prelude-1787894210-00a971/card-320.webp?v=20260828-1" alt="Candy Prelude bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Candy Prelude</h3>
+      <p class="bouquet-description">A cheerful bouquet with a soft romantic palette.</p>
+      <p class="bouquet-price">$190</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-candy-prelude?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Affair Élan -->
+  <article class="bouquet-card" data-price="125" data-flower="rose" data-occasion="love anniversary">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/affair-lan-1788969619-47fbb3-edited/card-320.webp?v=20260828-1" alt="Affair Élan bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Affair Élan</h3>
+      <p class="bouquet-description">Blush and ivory roses in a generous, softly domed bouquet.</p>
+      <p class="bouquet-price">From $125</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-rose-affair-garden-roses?size=petite">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Ivory Garden -->
+  <article class="bouquet-card" data-price="245" data-flower="rose garden-rose" data-occasion="wedding anniversary">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/ivory-garden-1787893887-7c632c/card-320.webp?v=20260828-1" alt="Ivory Garden bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Ivory Garden</h3>
+      <p class="bouquet-description">A graceful ivory arrangement for meaningful occasions.</p>
+      <p class="bouquet-price">$245</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-ivory-garden?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Juliette Poem -->
+  <article class="bouquet-card" data-price="190" data-flower="rose garden-rose" data-occasion="wedding anniversary">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/juliette-poem-1788970537-f8a61c-edited/card-320.webp?v=20260828-1" alt="Juliette Poem bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Juliette Poem</h3>
+      <p class="bouquet-description">A romantic garden rose arrangement with timeless charm.</p>
+      <p class="bouquet-price">From $190</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-juliette-garden-spray-roses?size=petite">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Blush Cloud -->
+  <article class="bouquet-card" data-price="180" data-flower="rose" data-occasion="birthday love">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/blush-cloud-1788968906-7cecb7-edited/card-320.webp?v=20260828-1" alt="Blush Cloud bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Blush Cloud</h3>
+      <p class="bouquet-description">Soft blush tones in a dreamy arrangement.</p>
+      <p class="bouquet-price">From $180</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-blush-cloud?size=petite">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Golden Satin Gala -->
+  <article class="bouquet-card" data-price="135" data-flower="tulip" data-occasion="birthday wedding">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/golden-satin-gala-1788969964-e92fcc-edited/card-320.webp?v=20260828-1" alt="Golden Satin Gala bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Golden Satin Gala</h3>
+      <p class="bouquet-description">Sunny yellow tulips for cheerful celebrations.</p>
+      <p class="bouquet-price">From $135</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-yellow-tulips?size=petite">View Bouquet</a>
+    </div>
+  </article>
+  <!-- Petal Prelude -->
+  <article class="bouquet-card" data-price="220" data-flower="rose" data-occasion="anniversary wedding">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/petal-prelude-1787893964-099186/card-320.webp?v=20260828-1" alt="Petal Prelude bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Petal Prelude</h3>
+      <p class="bouquet-description">A graceful rose arrangement for timeless occasions.</p>
+      <p class="bouquet-price">$220</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-petal-prelude?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Garden Whisper -->
+  <article class="bouquet-card" data-price="150" data-flower="rose" data-occasion="birthday sympathy">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/garden-whisper-1788969276-ba5841-edited/card-320.webp?v=20260828-1" alt="Garden Whisper bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Garden Whisper</h3>
+      <p class="bouquet-description">Soft tones in a bouquet that whispers elegance.</p>
+      <p class="bouquet-price">From $150</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-garden-whisper?size=petite">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Blush Sonnet -->
+  <article class="bouquet-card" data-price="150" data-flower="rose" data-occasion="birthday love">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/blush-sonnet-1788969042-7a5c42-edited/card-320.webp?v=20260828-1" alt="Blush Sonnet bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Blush Sonnet</h3>
+      <p class="bouquet-description">A poetic blush arrangement for heartfelt occasions.</p>
+      <p class="bouquet-price">From $150</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-blush-sonnet?size=petite">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Ruby Blush -->
+  <article class="bouquet-card" data-price="130" data-flower="rose" data-occasion="birthday anniversary">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/ruby-blush-1787894143-6749e9/card-320.webp?v=20260828-1" alt="Ruby Blush bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Ruby Blush</h3>
+      <p class="bouquet-description">A vibrant ruby-toned bouquet with romantic flair.</p>
+      <p class="bouquet-price">$130</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-ruby-blush?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Azure Serenity -->
+  <article class="bouquet-card" data-price="120" data-flower="hydrangea" data-occasion="birthday sympathy just-because">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/azure-serenity-1788968785-b1fc6d-edited/card-320.webp?v=20260828-1" alt="Azure Serenity bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Azure Serenity</h3>
+      <p class="bouquet-description">A cloud of blue hydrangeas with calm, airy color.</p>
+      <p class="bouquet-price">From $120</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-azure-serenity?size=petite">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Rosé Tapestry -->
+  <article class="bouquet-card" data-price="170" data-flower="rose" data-occasion="anniversary wedding">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/ros-tapestry-1788969113-a65542-edited/card-320.webp?v=20260828-1" alt="Rosé Tapestry bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Rosé Tapestry</h3>
+      <p class="bouquet-description">A woven palette of pink roses for elegant occasions.</p>
+      <p class="bouquet-price">From $170</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-ros-tapestry?size=petite">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Spring Soirée -->
+  <article class="bouquet-card" data-price="220" data-flower="rose" data-occasion="birthday wedding">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/spring-soir-e-1787894267-e5b582/card-320.webp?v=20260828-1" alt="Spring Soirée bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Spring Soirée</h3>
+      <p class="bouquet-description">A lively spring bouquet for joyful celebrations.</p>
+      <p class="bouquet-price">$220</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-spring-soir-e?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Ivory Cloud -->
+  <article class="bouquet-card" data-price="180" data-flower="rose" data-occasion="sympathy wedding">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/ivory-cloud-1788968934-16692f-edited/card-320.webp?v=20260828-1" alt="Ivory Cloud bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Ivory Cloud</h3>
+      <p class="bouquet-description">An airy ivory bouquet with serene tones.</p>
+      <p class="bouquet-price">From $180</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-ivory-cloud?size=petite">View Bouquet</a>
+    </div>
+  </article>
+  <!-- Burgundy Peony -->
+  <article class="bouquet-card" data-price="340" data-flower="peony" data-occasion="anniversary wedding">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/burgundy-peony-1787891606-9b7f34/card-320.webp?v=20260828-1" alt="Burgundy Peony bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Burgundy Peony</h3>
+      <p class="bouquet-description">Rich burgundy peonies for a dramatic gesture.</p>
+      <p class="bouquet-price">$340</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-burgundy-peony?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Rosewater Atlas -->
+  <article class="bouquet-card" data-price="310" data-flower="rose" data-occasion="love anniversary">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/rosewater-atlas-1787968127-2added/card-320.webp?v=20260828-1" alt="Rosewater Atlas bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Rosewater Atlas</h3>
+      <p class="bouquet-description">A refined rose arrangement with soft tones.</p>
+      <p class="bouquet-price">$310</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-rosewater-atlas?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Crimson Empire -->
+  <article class="bouquet-card" data-price="440" data-flower="rose" data-occasion="wedding anniversary">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/crimson-empire-1788972819-987111-edited/card-320.webp?v=20260828-1" alt="Crimson Empire bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Crimson Empire</h3>
+      <p class="bouquet-description">A grand crimson bouquet for regal occasions.</p>
+      <p class="bouquet-price">From $440</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-crimson-empire?size=luxe">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Pink Overture -->
+  <article class="bouquet-card" data-price="230" data-flower="rose" data-occasion="birthday love">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/pink-overture-1787894091-868995/card-320.webp?v=20260828-1" alt="Pink Overture bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Pink Overture</h3>
+      <p class="bouquet-description">A lively pink bouquet with elegant flair.</p>
+      <p class="bouquet-price">$230</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-pink-overture?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Pastel Meridian -->
+  <article class="bouquet-card" data-price="345" data-flower="rose hydrangea" data-occasion="wedding anniversary">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/pastel-meridian-1787968023-242c06/card-320.webp?v=20260828-1" alt="Pastel Meridian bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Pastel Meridian</h3>
+      <p class="bouquet-description">Pastel tones arranged with graceful balance.</p>
+      <p class="bouquet-price">$345</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-pastel-meridian?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Champagne Garden -->
+  <article class="bouquet-card" data-price="130" data-flower="rose" data-occasion="birthday wedding">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/champagne-garden-1788969012-5a3cbd-edited/card-320.webp?v=20260828-1" alt="Champagne Garden bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Champagne Garden</h3>
+      <p class="bouquet-description">Soft champagne tones in a garden-inspired bouquet.</p>
+      <p class="bouquet-price">From $130</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-champagne-garden?size=petite">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Mauve Cartography -->
+  <article class="bouquet-card" data-price="390" data-flower="rose" data-occasion="anniversary wedding">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/mauve-cartography-1787967722-e918f5/card-320.webp?v=20260828-1" alt="Mauve Cartography bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Mauve Cartography</h3>
+      <p class="bouquet-description">A mauve-toned bouquet with artistic flair.</p>
+      <p class="bouquet-price">$390</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-mauve-cartography?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Sunset Atelier -->
+  <article class="bouquet-card" data-price="190" data-flower="rose" data-occasion="birthday love">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/sunset-atelier-1787893825-657204/card-320.webp?v=20260828-1" alt="Sunset Atelier bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Sunset Atelier</h3>
+      <p class="bouquet-description">Warm sunset hues in a creative arrangement.</p>
+      <p class="bouquet-price">$190</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-sunset-atelier?size=couture">View Bouquet</a>
+    </div>
+  </article>
+  <!-- Ruby Embrace -->
+  <article class="bouquet-card" data-price="460" data-flower="rose" data-occasion="love anniversary">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/ruby-embrace-1788969074-29ddc6-edited/card-320.webp?v=20260828-1" alt="Ruby Embrace bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Ruby Embrace</h3>
+      <p class="bouquet-description">A bold ruby bouquet for passionate occasions.</p>
+      <p class="bouquet-price">From $460</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-ruby-embrace?size=luxe">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Moonlight Roses -->
+  <article class="bouquet-card" data-price="440" data-flower="rose" data-occasion="wedding anniversary">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/moonlight-roses-1787894802-f3d38a/card-320.webp?v=20260828-1" alt="Moonlight Roses bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Moonlight Roses</h3>
+      <p class="bouquet-description">Elegant roses glowing with moonlit charm.</p>
+      <p class="bouquet-price">$440</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-moonlight-roses?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Porcelain Mallow -->
+  <article class="bouquet-card" data-price="620" data-flower="rose" data-occasion="anniversary wedding">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/porcelain-mallow-1787966355-b0a65b/card-320.webp?v=20260828-1" alt="Porcelain Mallow bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Porcelain Mallow</h3>
+      <p class="bouquet-description">A luxurious porcelain-toned bouquet.</p>
+      <p class="bouquet-price">$620</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-porcelain-mallow?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Opaline Heart -->
+  <article class="bouquet-card" data-price="255" data-flower="rose" data-occasion="birthday love">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/opaline-heart-1787967841-79cf3f/card-320.webp?v=20260828-1" alt="Opaline Heart bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Opaline Heart</h3>
+      <p class="bouquet-description">Soft opaline tones in a heartful bouquet.</p>
+      <p class="bouquet-price">$255</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-opaline-heart?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Poem Nocturne -->
+  <article class="bouquet-card" data-price="150" data-flower="rose" data-occasion="birthday sympathy">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/poem-nocturne-1788123225-cfbbd9-edited/card-320.webp?v=20260828-1" alt="Poem Nocturne bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Poem Nocturne</h3>
+      <p class="bouquet-description">A poetic bouquet with nocturnal elegance.</p>
+      <p class="bouquet-price">$150</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-poem-french-roses?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Citrine Veil -->
+  <article class="bouquet-card" data-price="295" data-flower="rose" data-occasion="wedding anniversary">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/citrine-veil-1787967568-8ee980/card-320.webp?v=20260828-1" alt="Citrine Veil bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Citrine Veil</h3>
+      <p class="bouquet-description">Golden citrine tones in a refined bouquet.</p>
+      <p class="bouquet-price">$295</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-citrine-veil?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Ruby Cadence -->
+  <article class="bouquet-card" data-price="330" data-flower="rose" data-occasion="love anniversary">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/ruby-cadence-1787893036-e2afc8/card-320.webp?v=20260828-1" alt="Ruby Cadence bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Ruby Cadence</h3>
+      <p class="bouquet-description">A ruby-toned bouquet with rhythmic elegance.</p>
+      <p class="bouquet-price">$330</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-ruby-cadence?size=couture">View Bouquet</a>
+    </div>
+  </article>
+  <!-- Peony Blush -->
+  <article class="bouquet-card" data-price="610" data-flower="peony" data-occasion="wedding anniversary">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/peony-blush-1787894714-3dba8b/card-320.webp?v=20260828-1" alt="Peony Blush bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Peony Blush</h3>
+      <p class="bouquet-description">Luxurious blush peonies for elegant occasions.</p>
+      <p class="bouquet-price">$610</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-peony-blush?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Ivory Peony -->
+  <article class="bouquet-card" data-price="990" data-flower="peony" data-occasion="wedding anniversary">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/ivory-peony-1787894494-db50ba/card-320.webp?v=20260828-1" alt="Ivory Peony bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Ivory Peony</h3>
+      <p class="bouquet-description">An opulent ivory peony bouquet for grand gestures.</p>
+      <p class="bouquet-price">$990</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-ivory-peony?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Fuchsia Cloud -->
+  <article class="bouquet-card" data-price="460" data-flower="rose" data-occasion="birthday love">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/fuchsia-cloud-1787893617-992c11/card-320.webp?v=20260828-1" alt="Fuchsia Cloud bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Fuchsia Cloud</h3>
+      <p class="bouquet-description">Bright fuchsia tones in a cloud-like bouquet.</p>
+      <p class="bouquet-price">$460</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-fuchsia-cloud?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Peony Soufflé -->
+  <article class="bouquet-card" data-price="610" data-flower="peony" data-occasion="wedding anniversary">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/blush-ballet-1787893219-1046bf/card-320.webp?v=20260828-1" alt="Peony Soufflé bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Peony Soufflé</h3>
+      <p class="bouquet-description">A soft soufflé of peonies for refined occasions.</p>
+      <p class="bouquet-price">$610</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-blush-ballet?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Peony Sonata -->
+  <article class="bouquet-card" data-price="490" data-flower="peony" data-occasion="anniversary wedding">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/peony-sonata-1787893128-db0f5c/card-320.webp?v=20260828-1" alt="Peony Sonata bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Peony Sonata</h3>
+      <p class="bouquet-description">A harmonious sonata of peonies in bloom.</p>
+      <p class="bouquet-price">$490</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-peony-sonata?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Ballet Peony -->
+  <article class="bouquet-card" data-price="550" data-flower="peony" data-occasion="wedding anniversary">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/ballet-peony-1787894563-9e6197/card-320.webp?v=20260828-1" alt="Ballet Peony bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Ballet Peony</h3>
+      <p class="bouquet-description">Graceful ballet-inspired peonies for elegant occasions.</p>
+      <p class="bouquet-price">$550</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-ballet-peony?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Camellia Waltz -->
+  <article class="bouquet-card" data-price="330" data-flower="camellia" data-occasion="birthday wedding">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/tender-mosaic-1787892587-e674c9/card-320.webp?v=20260828-1" alt="Camellia Waltz bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Camellia Waltz</h3>
+      <p class="bouquet-description">Camellias arranged with waltz-like elegance.</p>
+      <p class="bouquet-price">$330</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-tender-mosaic?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Mauve Cadence -->
+  <article class="bouquet-card" data-price="330" data-flower="rose" data-occasion="anniversary wedding">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/mauve-cadence-1787892973-aec506/card-320.webp?v=20260828-1" alt="Mauve Cadence bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Mauve Cadence</h3>
+      <p class="bouquet-description">Mauve roses arranged with rhythmic grace.</p>
+      <p class="bouquet-price">$330</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-mauve-cadence?size=couture">View Bouquet</a>
+    </div>
+  </article>
+  <!-- Champagne Rhapsody -->
+  <article class="bouquet-card" data-price="235" data-flower="rose" data-occasion="anniversary wedding">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/champagne-rhapsody-1787892485-22c82f/card-320.webp?v=20260828-1" alt="Champagne Rhapsody bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Champagne Rhapsody</h3>
+      <p class="bouquet-description">Understated champagne tones for timeless elegance.</p>
+      <p class="bouquet-price">$235</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-champagne-rhapsody?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Blush Atelier -->
+  <article class="bouquet-card" data-price="425" data-flower="rose" data-occasion="love anniversary">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/blush-atelier-1787892390-0dadaa/card-320.webp?v=20260828-1" alt="Blush Atelier bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Blush Atelier</h3>
+      <p class="bouquet-description">A luxurious blush bouquet crafted with artistry.</p>
+      <p class="bouquet-price">$425</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-blush-atelier?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Pink Soirée -->
+  <article class="bouquet-card" data-price="330" data-flower="rose" data-occasion="birthday wedding">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/pink-soir-e-1787892035-062be9/card-320.webp?v=20260828-1" alt="Pink Soirée bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Pink Soirée</h3>
+      <p class="bouquet-description">A lively pink bouquet for festive occasions.</p>
+      <p class="bouquet-price">$330</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-pink-soir-e?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Apricot Muse -->
+  <article class="bouquet-card" data-price="480" data-flower="rose" data-occasion="anniversary wedding">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/apricot-muse-1787890831-a5d02b/card-320.webp?v=20260828-1" alt="Apricot Muse bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Apricot Muse</h3>
+      <p class="bouquet-description">An apricot-toned bouquet with artistic elegance.</p>
+      <p class="bouquet-price">$480</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-apricot-muse?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Rose Mosaic -->
+  <article class="bouquet-card" data-price="125" data-flower="rose" data-occasion="birthday love">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/rose-mosaic-1788968978-147651-edited/card-320.webp?v=20260828-1" alt="Rose Mosaic bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Rose Mosaic</h3>
+      <p class="bouquet-description">A mosaic of roses in warm tones.</p>
+      <p class="bouquet-price">From $125</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-rose-mosaic?size=petite">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Peony Whisper -->
+  <article class="bouquet-card" data-price="685" data-flower="peony" data-occasion="wedding anniversary">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/peony-whisper-1787890717-080e27/card-320.webp?v=20260828-1" alt="Peony Whisper bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Peony Whisper</h3>
+      <p class="bouquet-description">Soft whispering peonies for refined occasions.</p>
+      <p class="bouquet-price">$685</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-peony-whisper?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Fuchsia Affair -->
+  <article class="bouquet-card" data-price="420" data-flower="rose" data-occasion="love anniversary">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/fuchsia-affair-1787890491-d044ce/card-320.webp?v=20260828-1" alt="Fuchsia Affair bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Fuchsia Affair</h3>
+      <p class="bouquet-description">A bold fuchsia bouquet for passionate occasions.</p>
+      <p class="bouquet-price">$420</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-fuchsia-affair?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Ivory Rhapsody -->
+  <article class="bouquet-card" data-price="440" data-flower="rose" data-occasion="wedding anniversary">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/ivory-rhapsody-1787890361-1d783f/card-320.webp?v=20260828-1" alt="Ivory Rhapsody bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Ivory Rhapsody</h3>
+      <p class="bouquet-description">Elegant ivory roses in a refined arrangement.</p>
+      <p class="bouquet-price">$440</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-ivory-rhapsody?size=couture">View Bouquet</a>
+    </div>
+  </article>
+  <!-- Tulip Élan -->
+  <article class="bouquet-card" data-price="330" data-flower="tulip" data-occasion="wedding anniversary">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/tulip-lan-1787890176-cbb89a/card-320.webp?v=20260828-1" alt="Tulip Élan bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Tulip Élan</h3>
+      <p class="bouquet-description">Elegant tulips arranged with refined flair.</p>
+      <p class="bouquet-price">$330</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-tulip-lan?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Pink Reverie -->
+  <article class="bouquet-card" data-price="245" data-flower="rose" data-occasion="birthday love">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/pink-reverie-1787876659-e545fd/card-320.webp?v=20260828-1" alt="Pink Reverie bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Pink Reverie</h3>
+      <p class="bouquet-description">Dreamy pink roses for heartfelt occasions.</p>
+      <p class="bouquet-price">$245</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-pink-reverie?size=couture">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Country Poem -->
+  <article class="bouquet-card" data-price="125" data-flower="garden-rose" data-occasion="birthday sympathy">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/country-poem-1788969935-d8c273-edited/card-320.webp?v=20260828-1" alt="Country Poem bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Country Poem</h3>
+      <p class="bouquet-description">Rustic garden roses with poetic charm.</p>
+      <p class="bouquet-price">From $125</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-country-home-garden-roses?size=petite">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Aurora Muse -->
+  <article class="bouquet-card" data-price="125" data-flower="rose" data-occasion="birthday love">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/aurora-muse-1788969590-81ba38-edited/card-320.webp?v=20260828-1" alt="Aurora Muse bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Aurora Muse</h3>
+      <p class="bouquet-description">Soft aurora-inspired roses for elegant gifting.</p>
+      <p class="bouquet-price">From $125</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-aurora-charm-roses?size=petite">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Golden Aureline Poem -->
+  <article class="bouquet-card" data-price="125" data-flower="rose" data-occasion="birthday wedding">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/golden-aureline-poem-1788969680-3c395d-edited/card-320.webp?v=20260828-1" alt="Golden Aureline Poem bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Golden Aureline Poem</h3>
+      <p class="bouquet-description">Golden roses arranged with poetic elegance.</p>
+      <p class="bouquet-price">From $125</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-aureline-yellow-roses?size=petite">View Bouquet</a>
+    </div>
+  </article>
+
+  <!-- Blush Embrace Romance -->
+  <article class="bouquet-card" data-price="125" data-flower="rose" data-occasion="love anniversary">
+    <div class="bouquet-image">
+      <img src="https://api.rosafiora.com/catalog-images/blush-embrace-romance-1788969904-194c21-edited/card-320.webp?v=20260828-1" alt="Blush Embrace Romance bouquet" loading="lazy">
+    </div>
+    <div class="bouquet-details">
+      <h3>Blush Embrace Romance</h3>
+      <p class="bouquet-description">Romantic blush roses in a tender embrace.</p>
+      <p class="bouquet-price">From $125</p>
+      <a class="view-bouquet" href="https://rosafiora.com/bouquet/bq-pink-embrace-roses?size=petite">View Bouquet</a>
+    </div>
+  </article>
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-about">
+      <h4>Rosa Fiora</h4>
+      <p>Timeless floral artistry, crafted with elegance and care.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/catalog">Bouquet Catalog</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/faq">FAQ</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>Email: <a href="mailto:info@rosafiora.com">info@rosafiora.com</a></p>
+      <p>Phone: <a href="tel:+1234567890">+1 234 567 890</a></p>
+      <p>Location: Miami, FL</p>
+    </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Rosa Fiora. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const occasionFilter = document.getElementById("occasion-filter");
+    const flowerFilter = document.getElementById("flower-filter");
+    const bouquetCards = [...document.querySelectorAll(".bouquet-card")];
+    const bouquetGrid = document.getElementById("bouquetGrid");
+
+    if (!occasionFilter || !flowerFilter || !bouquetGrid) return;
+
+    const noResults = document.createElement("p");
+    noResults.className = "no-results";
+    noResults.textContent = "No bouquets match those filters. Try another selection.";
+    noResults.hidden = true;
+    bouquetGrid.insertAdjacentElement("afterend", noResults);
+
+    const flowerAliases = {
+        roses: ["rose", "roses", "garden-rose"],
+        lilies: ["lily", "lilies"],
+        tulips: ["tulip", "tulips"],
+        orchids: ["orchid", "orchids"]
+    };
+
+    function filterBouquets() {
+        const selectedOccasion = occasionFilter.value.toLowerCase();
+        const selectedFlower = flowerFilter.value.toLowerCase();
+        let visibleCount = 0;
+
+        bouquetCards.forEach(card => {
+            const occasions = (card.dataset.occasion || "")
+                .toLowerCase().split(/\s+/).filter(Boolean);
+
+            const flowers = (card.dataset.flower || "")
+                .toLowerCase().split(/\s+/).filter(Boolean);
+
+            const matchesOccasion =
+                selectedOccasion === "all" ||
+                occasions.includes(selectedOccasion);
+
+            const acceptedFlowers =
+                flowerAliases[selectedFlower] || [selectedFlower];
+
+            const matchesFlower =
+                selectedFlower === "all" ||
+                flowers.some(flower => acceptedFlowers.includes(flower));
+
+            const shouldShow = matchesOccasion && matchesFlower;
+            card.hidden = !shouldShow;
+
+            if (shouldShow) {
+                visibleCount++;
+
+                if (window.gsap) {
+                    gsap.fromTo(
+                        card,
+                        { opacity: 0, y: 12 },
+                        {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.35,
+                            ease: "power2.out",
+                            overwrite: "auto"
+                        }
+                    );
+                }
+            }
+        });
+
+        noResults.hidden = visibleCount !== 0;
+    }
+
+    // Read the occasion from the homepage link.
+    const params = new URLSearchParams(window.location.search);
+    const occasionFromURL = params.get("occasion");
+
+    const validOccasions = [
+        "wedding",
+        "birthday",
+        "love",
+        "sympathy"
+    ];
+
+    if (
+        occasionFromURL &&
+        validOccasions.includes(occasionFromURL.toLowerCase())
+    ) {
+        occasionFilter.value = occasionFromURL.toLowerCase();
+    }
+
+    occasionFilter.addEventListener("change", filterBouquets);
+    flowerFilter.addEventListener("change", filterBouquets);
+
+    // Apply the URL selection immediately on page load.
+    filterBouquets();
+});
+</script>
+</body>
+</html>
